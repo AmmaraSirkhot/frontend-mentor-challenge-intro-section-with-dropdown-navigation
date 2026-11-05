@@ -283,7 +283,6 @@ button:hover,
 .clients {
     display: flex;
     gap: 2.5rem;
-    justify-content: center;
     align-items: center;
     width: 100%;
 }
