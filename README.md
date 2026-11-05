@@ -24,8 +24,8 @@ Users should be able to:
 
 ## Links
 
-- Solution URL: [Solution URL - Intro section with dropdown navigation.](https://github.com/AmmaraSirkhot/frontend-mentor-challenge-intro-section-with-dropdown-navigation)
-- Live Site URL: [Live site URL - Intro section with dropdown navigation.](https://ammarasirkhot.github.io/frontend-mentor-challenge-intro-section-with-dropdown-navigation/)
+- Solution URL: [Intro section with dropdown navigation.](https://github.com/AmmaraSirkhot/frontend-mentor-challenge-intro-section-with-dropdown-navigation)
+- Live Site URL: [Intro section with dropdown navigation.](https://ammarasirkhot.github.io/frontend-mentor-challenge-intro-section-with-dropdown-navigation/)
 
 ## My process
 
