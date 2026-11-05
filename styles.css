@@ -1,0 +1,401 @@
+/* ==========================================================================
+   Variables & Global Resets
+   ========================================================================== */
+:root {
+    --color-text-muted: hsl(0, 0%, 41%);
+    --color-text-dark: hsl(0, 0%, 8%);
+    --color-white: #ffffff;
+    --transition-standard: 0.3s ease;
+    --color-shadow-one: rgba(0, 0, 0, 0.2);
+    --color-shadow-two: rgba(0, 0, 0, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 1.125rem;
+    font-family: "Epilogue", sans-serif;
+    color: var(--color-text-dark);
+}
+
+ul,
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    text-transform: none;
+    font-family: inherit;
+    font-size: 100%;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+button:hover,
+.close-btn-img:hover,
+.menu-item:hover,
+.menu-option:hover {
+    color: var(--color-text-dark);
+}
+
+/* ==========================================================================
+   Menu Bar & Layout
+   ========================================================================== */
+.menu-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1.25rem;
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.logo {
+    color: inherit;
+    text-decoration: inherit;
+    cursor: pointer;
+}
+
+.menu-option {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+/* Shared Nav Links inside Unified Drawer/Navbar */
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* .close-btn-img:hover,
+.menu-item:hover, .menu-options:hover {
+    color: var(--color-text-dark);
+} */
+
+/* ==========================================================================
+   Dropdowns & Accordion
+   ========================================================================== */
+.dropdown-item {
+    position: relative;
+    width: 100%;
+}
+
+.dropdown-btn {
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.arrow-img {
+    width: 0.5rem;
+    height: 0.3rem;
+    transition: transform var(--transition-standard);
+}
+
+.dropdown-item.open .arrow-img {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    display: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Expanded/Open State for Dropdowns */
+.dropdown-item.open .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+
+
+/* ==========================================================================
+   Mobile Menu Overlay / Drawer
+   ========================================================================== */
+.menu-btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.menu-btn:hover {
+    transform: scale(1.1);
+}
+
+.menu-btn-area {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 17.5rem;
+    height: 100vh;
+    background-color: var(--color-white);
+    padding: 2rem 1.5rem;
+    box-shadow: -0.5rem 0 1.5rem var(--color-shadow-two);
+    z-index: 1000;
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform var(--transition-standard) ease-in-out,
+        opacity var(--transition-standard) ease-in-out,
+        visibility var(--transition-standard) ease-in-out;
+}
+
+.menu-btn-area.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.close-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+}
+
+.close-btn-img:hover {
+    transform: scale(1.2);
+}
+
+.auth-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.register-btn {
+    border: 0.1875rem solid var(--color-text-muted);
+    border-radius: 0.625rem;
+    padding: 0.625rem 1.25rem;
+    text-align: center;
+    width: 100%;
+}
+
+.register-btn:hover {
+    border-color: var(--color-text-dark);
+}
+
+/* ==========================================
+   Main content & Layout Containers
+   ========================================== */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin: 3rem auto;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    justify-content: flex-end;
+    order: 1;
+}
+
+.desktop-img {
+    display: none;
+    max-width: 100%;
+    height: auto;
+}
+
+.mobile-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ==========================================
+   Section Specific Styles
+   ========================================== */
+.remote {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.remote>h1 {
+    font-size: 2.25rem;
+}
+
+.remote>p {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+.remote>a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    text-align: center;
+    color: var(--color-white);
+    font-weight: 600;
+    background-color: var(--color-text-dark);
+    border: 0.1875rem solid var(--color-text-dark);
+    border-radius: 1rem;
+    padding: 0.75rem 1.75rem;
+    line-height: 1.75rem;
+}
+
+.remote>a:hover {
+    color: var(--color-text-dark);
+    background-color: var(--color-white);
+}
+
+.clients {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* ==========================================
+   Desktop Media Query (min-width: 768px)
+   ========================================== */
+@media screen and (min-width: 768px) {
+
+    .menu-btn,
+    .close-menu-btn,
+    .mobile-img {
+        display: none;
+    }
+
+    /* Transform drawer into top horizontal navigation bar */
+    .menu-btn-area {
+        position: static;
+        width: auto;
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        background-color: transparent;
+        padding: 0;
+        box-shadow: none;
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        flex-grow: 1;
+        margin-left: 5rem;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+        width: auto;
+    }
+
+    .dropdown-btn {
+        width: auto;
+        justify-content: flex-start;
+    }
+
+    .auth-buttons {
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+        margin-top: 0;
+        gap: 1.5rem;
+    }
+
+    .register-btn {
+        width: auto;
+        margin: 0;
+    }
+
+    /* Desktop Absolute Dropdowns */
+    .dropdown-item.open .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--color-white);
+        min-width: 10rem;
+        padding: 1.25rem;
+        border-radius: 0.625rem;
+        box-shadow: 0 0.5rem 1rem var(--color-shadow-one);
+        margin-top: 0.5rem;
+    }
+
+    .desktop-img {
+        display: block;
+        max-width: 29rem;
+    }
+
+    .content-container {
+        flex-direction: row;
+        gap: 9rem;
+        margin: 3rem auto 3rem 8rem;
+    }
+
+    .content {
+        order: 0;
+    }
+
+    .remote {
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .remote>h1 {
+        width: min(500px, 100%);
+        font-size: 4.7rem;
+    }
+
+    .remote>p {
+        text-align: left;
+        width: min(430px, 100%);
+        margin-right: 2.75rem;
+    }
+}
+
+/* ==========================================
+   Utilities & Footer Attribution
+   ========================================== */
+.attribution {
+    font-size: 0.6875rem;
+    text-align: center;
+    color: var(--color-text-muted);
+}
+
+.attribution a {
+    color: var(--color-text-dark);
+}

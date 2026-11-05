@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="menu-bar">
+      
+      <!-- Logo -->
+      <a class="logo" href="#" title="Home">
+        <img src="images/logo.svg" alt="Snap Logo">
+      </a>
+
+      <!-- Hamburger Menu Button (Mobile Only) -->
+      <button class="menu-btn" id="menu-toggle-btn" aria-expanded="false" aria-controls="menu-area" aria-label="Open Menu">
+        <img src="images/icon-menu.svg" alt="">
+      </button>
+
+      <!-- Unified Navigation & Auth Container (Acts as desktop navbar & mobile drawer) -->
+      <div id="menu-area" class="menu-btn-area">
+        <button id="close-btn" class="close-menu-btn" aria-label="Close Menu">
+          <img class="close-btn-img" src="images/icon-close-menu.svg" alt="">
+        </button>
+        
+        <nav aria-label="Main Navigation">
+          <ul class="nav-links">
+            
+            <!-- Features Dropdown -->
+            <li class="dropdown-item">
+              <button class="dropdown-btn" aria-expanded="false">
+                Features
+                <img class="arrow-img" src="images/icon-arrow-down.svg" alt="">
+              </button>
+              <ul class="dropdown-menu">
+                <li class="menu-option"><img src="images/icon-todo.svg" alt=""><a href="#">Todo List</a></li>
+                <li class="menu-option"><img src="images/icon-calendar.svg" alt=""><a href="#">Calendar</a></li>
+                <li class="menu-option"><img src="images/icon-reminders.svg" alt=""><a href="#">Reminders</a></li>
+                <li class="menu-option"><img src="images/icon-planning.svg" alt=""><a href="#">Planning</a></li>
+              </ul>
+            </li>
+
+            <!-- Company Dropdown -->
+            <li class="dropdown-item">
+              <button class="dropdown-btn" aria-expanded="false">
+                Company
+                <img class="arrow-img" src="images/icon-arrow-down.svg" alt="">
+              </button>
+              <ul class="dropdown-menu">
+                <li class="menu-item"><a href="#">History</a></li>
+                <li class="menu-item"><a href="#">Our Team</a></li>
+                <li class="menu-item"><a href="#">Blog</a></li>
+              </ul>
+            </li>
+
+            <li class="menu-item"><a href="#">Careers</a></li>
+            <li class="menu-item"><a href="#">About</a></li>
+          </ul>
+        </nav>
+
+        <!-- Auth Buttons (Inside same container) -->
+        <div class="auth-buttons">
+          <button type="button">Login</button>
+          <button type="button" class="register-btn">Register</button>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Hero Content -->
+  <main>
+    <div class="content-container">
+      <div class="content">
+        <div class="remote">
+          <h1>Make remote work</h1>
+          <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+          <a href="#">Learn more</a>
+        </div>
+        
+        <div class="clients">
+          <img src="images/client-databiz.svg" alt="databiz">
+          <img src="images/client-audiophile.svg" alt="audiophile">
+          <img src="images/client-meet.svg" alt="meet">
+          <img src="images/client-maker.svg" alt="maker">
+        </div>
+      </div>
+
+      <div>
+        <img class="desktop-img" src="images/image-hero-desktop.png" alt="desktop hero">
+        <img class="mobile-img" src="images/image-hero-mobile.png" alt="mobile hero">
+      </div>
+    </div>
+  </main>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Ammara Sirkhot</a>.
+  </footer>
+
+  <script src="test.js"></script>
+</body>
+
+</html>
